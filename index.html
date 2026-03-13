@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de la felicidad en Colombia | Colombia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="mapa.png" alt="Mapa de Colombia" class="logo-icon">
+            Reality of Colombia
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="navigation.showHome()">Inicio</a></li>
+        </ul>
+        <a href="#" class="btn-contact">Menú principal</a>
+    </nav>
+
+    <header class="hero" id="main-header">
+        <div class="hero-content">
+            <h1>Análisis de la felicidad en Colombia</h1>
+            <p>¿Qué tan felices realmente llegamos a ser los colombianos?</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="home-content">
+            <section class="intro">
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary); font-size: 2.2rem; font-weight: 800;">El estado de la felicidad en Colombia</h2>
+                <div class="colombia-static-content">
+                    <div class="text-block">
+                        <h3>Contexto y Análisis Actual</h3>
+                        <p>
+                             La felicidad en Colombia ha experimentado una transformación significativa, pasando de entenderse principalmente como una expresión cultural asociada a la celebración y al optimismo colectivo, a concebirse como una construcción social vinculada a la resiliencia y a la búsqueda de condiciones estructurales más estables. Este proceso ha estado influenciado por múltiples factores: la persistencia del conflicto armado y los posteriores esfuerzos de paz, que modificaron las expectativas frente al futuro; las dinámicas económicas, marcadas por la desigualdad, el desempleo y la informalidad, que inciden directamente en la percepción de seguridad y bienestar; las brechas territoriales en acceso a educación, salud y oportunidades laborales; así como los cambios generacionales que han puesto mayor énfasis en la salud mental, la estabilidad emocional y la equidad social.
+                        </p>
+                    </div>
+                    <div class="image-block">
+                        <img src="20166.png" alt="Datos Colombia">
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-grid">
+                <div class="card">
+                    <h3>Situación social</h3>
+                    <p>Cronología detallada de los eventos sociales en Colombia (2011-2024).</p>
+                    <button class="btn-card" onclick="navigation.showDetails('social')">VER DETALLES</button>
+                </div>
+                <div class="card">
+                    <h3>Tendencias</h3>
+                    <p>Análisis de la resiliencia en Colombia.</p>
+                    <button class="btn-card" onclick="navigation.showDetails('tendencias')">VER TENDENCIAS</button>
+                </div>
+                <div class="card">
+                    <h3>Comparativa</h3>
+                    <p>Comparativa económica regional.</p>
+                    <button class="btn-card" onclick="navigation.showDetails('comparativa')">VER COMPARATIVA</button>
+                </div>
+            </section>
+
+            <section class="seccion-opinion">
+                <h2>¿Colombia se encuentra por encima o por debajo del promedio latinoamericano?</h2>
+                <p>Según la gráfica de Componentes de la Felicidad en Latinoamérica (2024), Colombia se ubica ligeramente por debajo del promedio regional, ya que su puntaje total no está entre los más altos y se encuentra en una posición intermedia frente a otros países como Costa Rica, Uruguay o México. Aunque el país presenta fortalezas en aspectos como el apoyo social y una contribución moderada en libertad para tomar decisiones, sus niveles de ingreso (PIB per cápita) y la percepción de corrupción reducen su puntaje global en comparación con las naciones mejor posicionadas. Para mejorar su nivel de felicidad, Colombia necesitaría fortalecer su crecimiento económico con mayor equidad, generar más oportunidades laborales formales, mejorar la confianza en las instituciones mediante la reducción de la corrupción y seguir ampliando el acceso a salud y bienestar social, de modo que estos factores impulsen un mayor bienestar general en la población.</p>
+                <br>
+                <p>1. <strong>Equidad Territorial:</strong> Que la calidad de vida de un campesino en el Chocó o el Catatumbo no sea abismalmente distinta a la de alguien en Bogotá.</p>
+                <p>2. <strong>Seguridad Psicológica:</strong> Eliminar el miedo constante que genera el conflicto, permitiendo que la gente planee a futuro sin incertidumbre.</p>
+                <p>3. <strong>Confianza en las Instituciones:</strong> La felicidad crece cuando el ciudadano siente que el sistema trabaja para él y no al revés.</p>
+                
+                <div class="contenedor-grafica-nueva">
+                    <img src="latam.png" alt="Gráfica de análisis de bienestar">
+                </div>
+            </section>
+
+            <section class="mini-sources">
+                <h4>Fuentes y Bibliografía</h4>
+                <ul>
+                    <li>• <strong>Autor: Orlando Contreras Leguia</strong></li>
+                    <li>• <strong>Contacto: orlandocontreras1001@gmail.com</strong></li>
+                    <li>• DANE: Encuesta de Pulso Social y reportes de Pobreza (2011-2024).</li>
+                    <li>• Ministerio de Salud y Protección Social: Informes de Bienestar.</li>
+                    <li>• World Happiness Report / PNUD Colombia.</li>
+                </ul>
+                <p>Accedido el: <span id="current-date"></span></p>
+            </section>
+        </div>
+
+        <div id="detail-view" class="hidden">
+            <div class="detail-image-container">
+                <img id="detail-img" src="" alt="">
+            </div>
+            <div class="detail-text">
+                <button class="btn-back" onclick="navigation.showHome()">← Volver al Inicio</button>
+                <h2 id="detail-title"></h2>
+                <div id="detail-description" class="detail-description"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Análisis de la felicidad en Colombia - Colombia</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-date').innerText = new Date().toLocaleDateString('es-ES');
+
+        const contentData = {
+            'social': {
+                title: 'Línea de Tiempo Social (2011–2024)',
+                text: `2011: Continuan las problemáticas sociales asociadas al conflicto armado interno, especialmente en zonas rurales donde persistían hechos de violencia y desplazamiento. Ese mismo año se presentaron movilizaciones estudiantiles en defensa de la educación pública, en las que miles de jóvenes exigieron mayor inversión estatal y rechazaron reformas que consideraban perjudiciales para las universidades públicas.
+
+2012: Inician oficialmente los diálogos de paz entre el Gobierno colombiano y las FARC en La Habana, generando expectativa nacional e internacional.
+
+2013: Se realizó el Paro Nacional Agrario, una protesta en la que campesinos de varias regiones del país expresaron su inconformidad por la difícil situación del campo. Reclamaban el alto costo de los insumos agrícolas, los bajos precios de sus productos y la falta de apoyo del Estado. La movilización evidenció los problemas estructurales que enfrentaba el sector rural y generó espacios de diálogo con el gobierno.
+
+2014: Durante 2014 avanzaron las negociaciones de paz, manteniendo la esperanza de una solución política al conflicto. Sin embargo, el país seguía enfrentando dificultades sociales como la desigualdad, la pobreza rural y la presencia de grupos armados ilegales en algunos territorios.
+
+2015: Se registran acuerdos parciales en el proceso de paz, especialmente en temas de víctimas y justicia transicional.
+
+2016: Se firmó el Acuerdo Final de Paz entre el Gobierno y las FARC, marcando un hecho histórico para el país. Aunque fue un paso importante hacia la reconciliación, también surgieron divisiones en la opinión pública y debates sobre su implementación.
+
+2017: Inicia la implementación del Acuerdo de Paz. Se presentan retos en seguridad y protección de líderes sociales en distintas regiones.
+
+2018: Se registraron movilizaciones estudiantiles que reclamaban mayor presupuesto para la educación superior pública. Las protestas reflejaron la preocupación por el financiamiento y la calidad del sistema educativo.
+
+2019: Se convocó un Paro Nacional en rechazo a reformas económicas y sociales propuestas por el gobierno. Las manifestaciones se desarrollaron en varias ciudades y evidenciaron el descontento de diversos sectores de la población.
+
+2020: La pandemia de COVID-19 impacta fuertemente la economía y el empleo. Aumentan las dificultades sociales en sectores vulnerables.
+
+2021: Se desarrolla un nuevo Paro Nacional, inicialmente contra una reforma tributaria. Las manifestaciones reflejan inconformidad por desigualdad, desempleo y acceso a oportunidades.
+
+2022: Cambio político con la elección de un nuevo gobierno que propone reformas sociales en salud, trabajo y sistema pensional.
+
+2023: Debates y discusiones alrededor de las reformas propuestas. Continúan movilizaciones tanto de apoyo como de oposición.
+
+2024: Persisten desafíos sociales relacionados con seguridad, economía y cumplimiento del Acuerdo de Paz, mientras el país mantiene un escenario de participación ciudadana activa.`,
+                img: 'colombia1.jpg' 
+            },
+            'tendencias': {
+                title: 'Tendencias de Felicidad de Colombia con otros países',
+                text: 'La gráfica muestra que Colombia obtiene un puntaje total ligeramente mayor que Ecuador y muy cercano al de Paraguay, pero la diferencia se explica principalmente por el peso del PIB per cápita y el apoyo social, que son los componentes más fuertes en los tres países. En Colombia, la esperanza de vida saludable aporta más que en Paraguay, lo que indica mejores condiciones en salud como parte del bienestar general. Ecuador, aunque mantiene una estructura similar, presenta un puntaje total un poco menor debido a una menor contribución del ingreso y del apoyo social.',
+                img: 'descarga.png'
+            },
+            'comparativa': {
+                title: 'Comparativa Económica Regional',
+                text: 'Entre 2011 y 2014, Colombia registró un crecimiento económico sólido superior al 4 %, impulsado principalmente por el sector minero-energético y los altos precios del petróleo; sin embargo, entre 2015 y 2019 el crecimiento se desaceleró a promedios cercanos al 2–3 % debido a la caída del crudo y menor inversión. En 2020 la economía sufrió una fuerte contracción cercana al -6,8 % por la pandemia, seguida de una recuperación significativa en 2021 con un rebote cercano al 7–8 %.',
+                img: 'monedas.jpg'
+            }
+        };
+
+        const navigation = {
+            showDetails: function(key) {
+                const item = contentData[key];
+                if (!item) return;
+                
+                const detailView = document.getElementById('detail-view');
+                detailView.classList.remove('animate-in');
+                void detailView.offsetWidth; 
+                detailView.classList.add('animate-in');
+
+                document.getElementById('detail-title').innerText = item.title;
+                const formattedText = item.text.replace(/(\d{4}:)/g, '<span class="year-mark">$1</span>');
+                
+                // LÓGICA CORREGIDA PARA EVITAR DOBLE IMAGEN
+                if (key === 'social') {
+                    detailView.classList.add('social-layout');
+                    document.getElementById('detail-description').innerHTML = 
+                        '<img src="colombia1.jpg" alt="Imagen Social" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; box-shadow: var(--shadow-soft);">' + 
+                        formattedText;
+                    // Vaciamos la lateral
+                    document.getElementById('detail-img').src = ""; 
+                } else {
+                    detailView.classList.remove('social-layout');
+                    document.getElementById('detail-description').innerHTML = formattedText;
+                    // Cargamos la lateral
+                    document.getElementById('detail-img').src = item.img;
+                }
+
+                document.getElementById('home-content').classList.add('hidden');
+                document.getElementById('main-header').classList.add('hidden');
+                detailView.classList.remove('hidden');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            },
+            showHome: function() {
+                document.getElementById('detail-view').classList.add('hidden');
+                document.getElementById('home-content').classList.remove('hidden');
+                document.getElementById('main-header').classList.remove('hidden');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        };
+    </script>
+</body>
+</html>
